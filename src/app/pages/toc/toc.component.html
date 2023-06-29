@@ -1,0 +1,20 @@
+<p>toc works!</p>
+<ul>
+<ng-container  *ngIf="contents$ | objectList | async as contents">
+
+    <li [ngStyle]="{
+      background: content.key === 'ability' ? '#ff0000' : '#ffffff'
+    }" *ngFor="let content of contents">
+      <span style="color: red">{{content.key}}</span>: {{content.value}}
+    </li>
+
+</ng-container>
+<li>always here</li>
+</ul>
+<!-- <ng-container *ngIf="contents$ | async as contents " >
+  <ul>
+    <li *ngFor="let content of contents">
+      <span style="color: red">{{content.key}}</span>: {{content.value}}
+    </li>
+  </ul>
+</ng-container> -->

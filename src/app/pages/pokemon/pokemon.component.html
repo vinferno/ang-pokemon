@@ -1,0 +1,12 @@
+<p>pokemon works!</p>
+
+
+<div *ngIf="listPokemon$ |async as listOfPokemon">
+  <ul>
+    <li *ngFor="let pokemon of listOfPokemon">
+      <span style="color: red">{{pokemon.name}}</span>: {{pokemon.url}}
+    </li>
+  </ul>
+</div>
+<button (click)="back()">Back</button>
+<button (click)="next()">Next</button>
